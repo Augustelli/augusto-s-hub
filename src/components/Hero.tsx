@@ -1,4 +1,5 @@
 import { ArrowDown, Download, MapPin, Briefcase } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 /**
  * Hero Section
@@ -8,6 +9,7 @@ import { ArrowDown, Download, MapPin, Briefcase } from "lucide-react";
  */
 
 export const Hero = () => {
+  const { t } = useTranslation();
   // Smooth scroll with reduced motion respect
   const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -34,11 +36,11 @@ export const Hero = () => {
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="chip chip-accent">
               <MapPin className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
-              <span>Mendoza, AR</span>
+              <span>{t('hero.location')}</span>
             </span>
             <span className="chip chip-accent">
               <Briefcase className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
-              <span>Open to opportunities</span>
+              <span>{t('hero.open_to')}</span>
             </span>
           </div>
         </div>
@@ -48,7 +50,7 @@ export const Hero = () => {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 animate-fade-in-up"
           style={{ animationDelay: "100ms" }}
         >
-          Augusto Tomás Mancuso
+          {t('hero.name')}
         </h1>
 
         {/* Using h2 for proper hierarchy - this is the professional title */}
@@ -56,14 +58,14 @@ export const Hero = () => {
           className="text-xl sm:text-2xl text-primary font-medium mb-4 animate-fade-in-up"
           style={{ animationDelay: "200ms" }}
         >
-          DevOps / Cloud / Backend — Kubernetes, CI/CD & Observability
+          {t('hero.title')}
         </h2>
 
         <p 
           className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up text-balance"
           style={{ animationDelay: "300ms" }}
         >
-          Final-year Computer Engineering student (Argentina). I build reliable services in hybrid and cloud environments.
+          {t('hero.brief')}
         </p>
 
         <div 
@@ -75,7 +77,7 @@ export const Hero = () => {
             onClick={handleContactClick}
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
           >
-            Contact me
+            {t('hero.cta_contact')}
             <ArrowDown className="w-4 h-4" aria-hidden="true" />
           </a>
           
@@ -85,10 +87,10 @@ export const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-lg hover:bg-muted border border-border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-            aria-label="Download CV as PDF (opens in new tab)"
+            aria-label={t('hero.cta_cv') + ' (opens in new tab)'}
           >
             <Download className="w-4 h-4" aria-hidden="true" />
-            Download CV
+            {t('hero.cta_cv')}
           </a>
         </div>
       </div>

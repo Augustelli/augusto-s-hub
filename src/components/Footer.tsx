@@ -1,6 +1,8 @@
 import { SocialLinks } from "./SocialLinks";
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -9,12 +11,14 @@ export const Footer = () => {
         <SocialLinks className="justify-center mb-6" />
         
         <p className="text-muted-foreground text-sm">
-          Made by Augusto · Mendoza, Argentina
+          {t('footer.made_by')}
         </p>
         <p className="text-muted-foreground text-xs mt-2">
-          © {currentYear} Augusto Tomás Mancuso. All rights reserved.
+          {t('footer.copyright', { year: currentYear })}
         </p>
       </div>
     </footer>
   );
 };
+
+export default Footer;

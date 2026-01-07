@@ -1,23 +1,10 @@
 import { useInView } from "@/hooks/useInView";
-
-const skills = [
-  "Kubernetes (EKS & on-prem)",
-  "Docker",
-  "CI/CD (Jenkins, GitHub Actions)",
-  "Observability (Grafana, Prometheus, Loki, OTel)",
-  "Java + Spring Boot",
-  "Python",
-  "AWS (EC2, VPC, RDS)",
-  "Azure (AKS, APIM basics)",
-  "Terraform (IaC)",
-  "Git (branching, code reviews)",
-  "API design (REST, idempotency, rate-limit)",
-  "Proxmox",
-  "VMware ESXi",
-];
+import { useTranslation } from 'react-i18next';
 
 export const Skills = () => {
   const { ref, isVisible } = useInView();
+  const { t } = useTranslation();
+  const skills: string[] = t('skills.list', { returnObjects: true }) as string[];
 
   return (
     <section id="skills" className="py-20">
@@ -26,7 +13,7 @@ export const Skills = () => {
         className={`container mx-auto section-fade-in ${isVisible ? "visible" : ""}`}
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 text-center">
-          Core Skills
+          {t('skills.heading')}
         </h2>
         
         <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
@@ -44,3 +31,5 @@ export const Skills = () => {
     </section>
   );
 };
+
+export default Skills;

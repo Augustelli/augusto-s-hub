@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "brand": "ATM",
+    "about": "Acerca",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "open_menu": "Abrir menú",
+    "close_menu": "Cerrar menú"
+  },
+  "hero": {
+    "location": "Mendoza, AR",
+    "open_to": "Abierto a oportunidades",
+    "name": "Augusto Tomás Mancuso",
+    "title": "DevOps / Cloud / Backend — Kubernetes, CI/CD & Observabilidad",
+    "brief": "Estudiante avanzado de Ingeniería en Computación (Argentina). Construyo servicios fiables en entornos híbridos y en la nube.",
+    "cta_contact": "Contactarme",
+    "cta_cv": "Descargar CV"
+  },
+  "about": {
+    "heading": "Acerca",
+    "paragraph": "Soy un ingeniero DevOps/Cloud y Backend enfocado en Kubernetes (on-prem y EKS), CI/CD y observabilidad con Grafana, Prometheus, Loki y OpenTelemetry. Construyo y opero microservicios en Java/Spring Boot y Python, automatizo entregas con Jenkins/GitHub Actions y defino infraestructura con Terraform. Migré cargas de trabajo de on-premise a la nube y también administro stacks de virtualización con Proxmox y VMware ESXi. Estudiante avanzado de Ingeniería en Computación, con base en Mendoza."
+  },
+  "contact": {
+    "heading": "Contacto",
+    "description": "Cuéntame sobre tu proyecto u oportunidad.",
+    "name_label": "Nombre",
+    "email_label": "Correo electrónico",
+    "company_label": "Empresa",
+    "message_label": "Mensaje",
+    "consent_text": "Consiento que este sitio web almacene la información enviada para que puedan responder a mi consulta.",
+    "placeholder_name": "Tu nombre",
+    "placeholder_email": "tu@ejemplo.com",
+    "placeholder_company": "Tu empresa",
+    "placeholder_message": "Cuéntame sobre tu proyecto...",
+    "sending": "Enviando tu mensaje...",
+    "success": "¡Mensaje enviado con éxito! Te contactaré pronto.",
+    "error": "Algo salió mal. Por favor intenta de nuevo o envíame un correo directamente.",
+    "send": "Enviar mensaje",
+    "sent": "¡Enviado!",
+    "honeypot_label": "Sitio web (dejar en blanco)"
+  },
+  "footer": {
+    "made_by": "Hecho por Augusto · Mendoza, Argentina",
+    "copyright": "© {{year}} Augusto Tomás Mancuso. Todos los derechos reservados."
+  },
+  "theme": {
+    "toggle": "Cambiar tema"
+  },
+  "skills": {
+    "heading": "Habilidades principales",
+    "list": [
+      "Kubernetes (EKS y on-prem)",
+      "Docker",
+      "CI/CD (Jenkins, GitHub Actions)",
+      "Observabilidad (Grafana, Prometheus, Loki, OTel)",
+      "Java + Spring Boot",
+      "Python",
+      "AWS (EC2, VPC, RDS)",
+      "Azure (AKS, conceptos básicos de APIM)",
+      "Terraform (IaC)",
+      "Git (ramificación, revisiones de código)",
+      "Diseño de API (REST, idempotencia, limitación de tasa)",
+      "Proxmox",
+      "VMware ESXi"
+    ]
+  },
+  "experience": {
+    "heading": "Experiencia",
+    "items": [
+      {
+        "title": "Ingeniero Backend y Cloud",
+        "company": "Freelance / Proyectos",
+        "period": "2022–Presente",
+        "description": "Microservicios en Java/Spring; integraciones de API; containerización; CI/CD; migraciones on-prem → AWS/K8s; resolución de problemas en producción."
+      },
+      {
+        "title": "Ingeniero SRE y de Observabilidad",
+        "company": "Independiente / Proyectos",
+        "period": "2024–Presente",
+        "description": "Grafana/Prometheus/Loki/OTel en K8s; pipelines de alertas; dashboards; Proxmox/ESXi para entornos de dev/test."
+      }
+    ],
+    "education": {
+      "heading": "Educación",
+      "paragraph": "Ingeniería en Computación — Último año, cerca de graduación. (Argentina)"
+    }
+  },
+  "showcase": {
+    "heading": "Resultados",
+    "description": "Resultados reales de sistemas en producción",
+    "items": [
+      {
+        "title": "Migración on-prem → K8s/EKS",
+        "description": "Despliegues y rollback automatizados; releases semanales."
+      },
+      {
+        "title": "Stack de Observabilidad",
+        "description": "Seguimiento de latencias P95, alertas accionables, trazas con OTel."
+      },
+      {
+        "title": "Endurecimiento de CI/CD",
+        "description": "Builds reproducibles, registro de artefactos y despliegues con puertas de control."
+      }
+    ]
+  },
+  "links": {
+    "heading": "Conectá conmigo"
+  },
+  "social": {
+    "nav_label": "Enlaces sociales",
+    "linkedin_aria": "Visitar perfil de LinkedIn (se abre en nueva pestaña)",
+    "github_aria": "Visitar perfil de GitHub (se abre en nueva pestaña)",
+    "email_aria": "Enviar correo a Augusto",
+    "cv_aria": "Descargar CV en PDF (se abre en nueva pestaña)"
+  }
+}
+

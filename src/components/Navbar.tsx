@@ -1,15 +1,18 @@
 import { useEffect, useState, useCallback } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", key: "nav.about" },
+  { href: "#skills", key: "nav.skills" },
+  { href: "#experience", key: "nav.experience" },
+  { href: "#contact", key: "nav.contact" },
 ];
 
 export const Navbar = () => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,14 +72,14 @@ export const Navbar = () => {
       <nav 
         className="container mx-auto flex items-center justify-between py-4" 
         role="navigation" 
-        aria-label="Main navigation"
+        aria-label={t('nav.brand')}
       >
         <a 
           href="#" 
           className="text-lg font-semibold text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background rounded"
-          aria-label="Back to top"
+          aria-label={t('nav.brand')}
         >
-          ATM
+          {t('nav.brand')}
         </a>
 
         {/* Desktop Navigation */}
@@ -93,12 +96,13 @@ export const Navbar = () => {
                   }`}
                   aria-current={activeSection === link.href.slice(1) ? "true" : undefined}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </a>
               </li>
             ))}
           </ul>
           <ThemeToggle />
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Menu Button */}
@@ -110,7 +114,7 @@ export const Navbar = () => {
             className="p-2 rounded-lg text-foreground hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMobileMenuOpen ? t('nav.close_menu') : t('nav.open_menu')}
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5" aria-hidden="true" />
@@ -137,7 +141,7 @@ export const Navbar = () => {
             className="fixed top-16 left-4 right-4 bg-card border border-border rounded-xl shadow-soft z-50 sm:hidden animate-fade-in"
             role="dialog"
             aria-modal="true"
-            aria-label="Navigation menu"
+            aria-label={t('nav.brand') + ' navigation'}
           >
             <ul className="p-2">
               {navLinks.map((link) => (
@@ -152,11 +156,14 @@ export const Navbar = () => {
                     }`}
                     aria-current={activeSection === link.href.slice(1) ? "true" : undefined}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </a>
                 </li>
               ))}
             </ul>
+            <div className="p-3 border-t border-border flex items-center justify-center">
+              <LanguageSwitcher />
+            </div>
           </div>
         </>
       )}

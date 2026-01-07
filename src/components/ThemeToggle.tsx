@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 export const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Check localStorage or system preference on mount
@@ -32,9 +34,11 @@ export const ThemeToggle = () => {
     <button
       onClick={toggle}
       className="p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDark ? t('theme.toggle') + ' (light)' : t('theme.toggle') + ' (dark)'}
     >
       {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
     </button>
   );
 };
+
+export default ThemeToggle;

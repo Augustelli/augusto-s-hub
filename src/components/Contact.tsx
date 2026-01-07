@@ -1,6 +1,7 @@
 import { useState, useRef, FormEvent } from "react";
 import { useInView } from "@/hooks/useInView";
 import { Send, Check, Loader2, AlertCircle } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 /**
  * Contact Form with Anti-Spam Protection
@@ -18,6 +19,7 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export const Contact = () => {
   const { ref, isVisible } = useInView();
+  const { t } = useTranslation();
   const [formStatus, setFormStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const formLoadTime = useRef(Date.now());
@@ -49,13 +51,6 @@ export const Contact = () => {
 
     try {
       // TODO: Replace with actual form endpoint
-      // Example with Formspree:
-      // const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //   method: 'POST',
-      //   body: formData,
-      //   headers: { 'Accept': 'application/json' }
-      // });
-      // if (!response.ok) throw new Error('Failed to send');
 
       // Log payload for debugging (remove in production)
       console.log("Form submission:", {
@@ -78,7 +73,7 @@ export const Contact = () => {
     } catch (error) {
       console.error("Form submission error:", error);
       setFormStatus("error");
-      setErrorMessage("Something went wrong. Please try again or email me directly.");
+      setErrorMessage(t('contact.error'));
     }
   };
 
@@ -89,10 +84,10 @@ export const Contact = () => {
         className={`container mx-auto section-fade-in ${isVisible ? "visible" : ""}`}
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-center">
-          Contact
+          {t('contact.heading')}
         </h2>
         <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-          Tell me about your project or opportunity.
+          {t('contact.description')}
         </p>
         
         <form 
@@ -107,16 +102,16 @@ export const Contact = () => {
             aria-atomic="true"
             className="sr-only"
           >
-            {formStatus === "submitting" && "Sending your message..."}
-            {formStatus === "success" && "Message sent successfully! I'll get back to you soon."}
-            {formStatus === "error" && `Error: ${errorMessage}`}
+            {formStatus === "submitting" && t('contact.sending')}
+            {formStatus === "success" && t('contact.success')}
+            {formStatus === "error" && `${t('contact.error')}: ${errorMessage}`}
           </div>
 
           <div className="space-y-5">
             {/* Honeypot field - hidden from users, bots will fill it */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
               <label htmlFor="website">
-                Website (leave blank)
+                {t('contact.honeypot_label')}
                 <input
                   type="text"
                   id="website"
@@ -129,7 +124,7 @@ export const Contact = () => {
 
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                Name <span className="text-destructive" aria-hidden="true">*</span>
+                {t('contact.name_label')} <span className="text-destructive" aria-hidden="true">*</span>
                 <span className="sr-only">(required)</span>
               </label>
               <input
@@ -140,14 +135,14 @@ export const Contact = () => {
                 autoComplete="name"
                 maxLength={100}
                 className="w-full px-4 py-2.5 rounded-lg bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
-                placeholder="Your name"
+                placeholder={t('contact.placeholder_name')}
                 aria-describedby="name-hint"
               />
             </div>
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                Email <span className="text-destructive" aria-hidden="true">*</span>
+                {t('contact.email_label')} <span className="text-destructive" aria-hidden="true">*</span>
                 <span className="sr-only">(required)</span>
               </label>
               <input
@@ -158,13 +153,13 @@ export const Contact = () => {
                 autoComplete="email"
                 maxLength={255}
                 className="w-full px-4 py-2.5 rounded-lg bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
-                placeholder="you@example.com"
+                placeholder={t('contact.placeholder_email')}
               />
             </div>
 
             <div>
               <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                Company <span className="text-muted-foreground">(optional)</span>
+                {t('contact.company_label')} <span className="text-muted-foreground">(optional)</span>
               </label>
               <input
                 type="text"
@@ -173,13 +168,13 @@ export const Contact = () => {
                 autoComplete="organization"
                 maxLength={100}
                 className="w-full px-4 py-2.5 rounded-lg bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
-                placeholder="Your company"
+                placeholder={t('contact.placeholder_company')}
               />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                Message <span className="text-destructive" aria-hidden="true">*</span>
+                {t('contact.message_label')} <span className="text-destructive" aria-hidden="true">*</span>
                 <span className="sr-only">(required)</span>
               </label>
               <textarea
@@ -189,7 +184,7 @@ export const Contact = () => {
                 rows={4}
                 maxLength={2000}
                 className="w-full px-4 py-2.5 rounded-lg bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors resize-none"
-                placeholder="Tell me about your project..."
+                placeholder={t('contact.placeholder_message')}
               />
             </div>
 
@@ -202,7 +197,7 @@ export const Contact = () => {
                 className="mt-1 w-4 h-4 rounded border-input text-primary focus:ring-ring focus:ring-2 focus:ring-offset-2 focus:ring-offset-background"
               />
               <label htmlFor="consent" className="text-sm text-muted-foreground">
-                I consent to having this website store my submitted information so they can respond to my inquiry.
+                {t('contact.consent_text')}
                 <span className="sr-only">(required)</span>
               </label>
             </div>
@@ -225,7 +220,7 @@ export const Contact = () => {
                 className="flex items-center gap-2 p-3 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400 text-sm"
               >
                 <Check className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                Message sent! I'll get back to you soon.
+                {t('contact.success')}
               </div>
             )}
 
@@ -238,17 +233,17 @@ export const Contact = () => {
               {formStatus === "submitting" ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
-                  Sending...
+                  {t('contact.sending')}
                 </>
               ) : formStatus === "success" ? (
                 <>
                   <Check className="w-4 h-4" aria-hidden="true" />
-                  Sent!
+                  {t('contact.sent')}
                 </>
               ) : (
                 <>
                   <Send className="w-4 h-4" aria-hidden="true" />
-                  Send Message
+                  {t('contact.send')}
                 </>
               )}
             </button>
@@ -258,3 +253,5 @@ export const Contact = () => {
     </section>
   );
 };
+
+export default Contact;

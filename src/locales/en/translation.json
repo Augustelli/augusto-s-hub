@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "brand": "ATM",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu"
+  },
+  "hero": {
+    "location": "Mendoza, AR",
+    "open_to": "Open to opportunities",
+    "name": "Augusto Tomás Mancuso",
+    "title": "DevOps / Cloud / Backend — Kubernetes, CI/CD & Observability",
+    "brief": "Final-year Computer Engineering student (Argentina). I build reliable services in hybrid and cloud environments.",
+    "cta_contact": "Contact me",
+    "cta_cv": "Download CV"
+  },
+  "about": {
+    "heading": "About",
+    "paragraph": "I'm a DevOps/Cloud & Backend engineer focused on Kubernetes (on-prem & EKS), CI/CD, and observability with Grafana, Prometheus, Loki, and OpenTelemetry. I build and operate Java/Spring Boot and Python microservices, automate delivery with Jenkins/GitHub Actions, and define infrastructure with Terraform. I've migrated workloads from on-premise to cloud, and I also manage virtualization stacks with Proxmox and VMware ESXi. Final-year Computer Engineering student, based in Mendoza."
+  },
+  "contact": {
+    "heading": "Contact",
+    "description": "Tell me about your project or opportunity.",
+    "name_label": "Name",
+    "email_label": "Email",
+    "company_label": "Company",
+    "message_label": "Message",
+    "consent_text": "I consent to having this website store my submitted information so they can respond to my inquiry.",
+    "placeholder_name": "Your name",
+    "placeholder_email": "you@example.com",
+    "placeholder_company": "Your company",
+    "placeholder_message": "Tell me about your project...",
+    "sending": "Sending your message...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "Something went wrong. Please try again or email me directly.",
+    "send": "Send Message",
+    "sent": "Sent!",
+    "honeypot_label": "Website (leave blank)"
+  },
+  "footer": {
+    "made_by": "Made by Augusto · Mendoza, Argentina",
+    "copyright": "© {{year}} Augusto Tomás Mancuso. All rights reserved."
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "skills": {
+    "heading": "Core Skills",
+    "list": [
+      "Kubernetes (EKS & on-prem)",
+      "Docker",
+      "CI/CD (Jenkins, GitHub Actions)",
+      "Observability (Grafana, Prometheus, Loki, OTel)",
+      "Java + Spring Boot",
+      "Python",
+      "AWS (EC2, VPC, RDS)",
+      "Azure (AKS, APIM basics)",
+      "Terraform (IaC)",
+      "Git (branching, code reviews)",
+      "API design (REST, idempotency, rate-limit)",
+      "Proxmox",
+      "VMware ESXi"
+    ]
+  },
+  "experience": {
+    "heading": "Experience",
+    "items": [
+      {
+        "title": "Backend & Cloud Engineer",
+        "company": "Freelance / Projects",
+        "period": "2022–Present",
+        "description": "Microservices in Java/Spring; API integrations; containerization; CI/CD; on-prem → AWS/K8s migrations; production troubleshooting."
+      },
+      {
+        "title": "SRE & Observability Engineer",
+        "company": "Independent / Projects",
+        "period": "2024–Present",
+        "description": "Grafana/Prometheus/Loki/OTel on K8s; alerting pipelines; dashboards; Proxmox/ESXi for dev/test environments."
+      }
+    ],
+    "education": {
+      "heading": "Education",
+      "paragraph": "Computer Engineering (B.S. equivalent) — Final year, near graduation. (Argentina)"
+    }
+  },
+  "showcase": {
+    "heading": "Outcomes",
+    "description": "Real results from production systems",
+    "items": [
+      {
+        "title": "On-prem → K8s/EKS Migration",
+        "description": "Automated rollouts & rollback; weekly releases."
+      },
+      {
+        "title": "Observability Stack",
+        "description": "P95 latency tracking, actionable alerts, tracing with OTel."
+      },
+      {
+        "title": "CI/CD Hardening",
+        "description": "Reproducible builds, artifact registry, and gated deployments."
+      }
+    ]
+  },
+  "links": {
+    "heading": "Connect with me"
+  },
+  "social": {
+    "nav_label": "Social links",
+    "linkedin_aria": "Visit LinkedIn profile (opens in new tab)",
+    "github_aria": "Visit GitHub profile (opens in new tab)",
+    "email_aria": "Send email to Augusto",
+    "cv_aria": "Download CV as PDF (opens in new tab)"
+  }
+}
